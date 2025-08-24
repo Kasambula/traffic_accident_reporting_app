@@ -1,0 +1,154 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px 0;
+    font-family: Arial, sans-serif;
+    color: #2c3e50;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1; /* Makes the map fill the remaining vertical space */
+}
+
+/* Layer Switcher Card */
+#layer-switcher {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    font-size: 13px;
+    max-width: 180px;
+    z-index: 1000;
+}
+#layer-switcher h4 {
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Legend Card */
+#legend {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    font-size: 13px;
+    z-index: 1000;
+}
+#legend h4 {
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 2px 0; /* Reduced margin to decrease height */
+    line-height: 1.2; /* Reduced line height */
+}
+.legend-color {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+/* Form Panel */
+#form-panel {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    width: 300px;
+    z-index: 1000;
+    max-height: 90%;
+    overflow-y: auto;
+    display: none; /* hidden until 'Add Report' is clicked */
+}
+#form-panel h4 {
+    margin-top: 0;
+    font-weight: 600;
+}
+#form-panel label {
+    display: block;
+    margin: 6px 0 2px;
+    font-weight: 500;
+}
+#form-panel input,
+#form-panel select,
+#form-panel textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+#form-panel button {
+    background: #2980B9;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+#form-panel button:hover {
+    background: #1F618D;
+}
+
+/* Popup */
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    bottom: 12px;
+    left: -50px;
+    min-width: 200px;
+}
+.ol-popup:after,
+.ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+}
+.ol-popup:before {
+    border-top-color: #ccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+}
