@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>KAMPALA TRAFFIC ACCIDENT PORTAL</h1>
+  <h1>KAMPALA TRAFFIC ACCIDENT PORTAL</h1>
 
   <div id="map"></div>
   
-    <div id="layer-switcher">
+  <div id="layer-switcher">
     <h4>Basemaps</h4>
     <input type="radio" name="basemap" id="osm" checked> <label for="osm">OSM Standard</label><br>
     <input type="radio" name="basemap" id="google-sat"> <label for="google-sat">Google Satellite</label>
@@ -42,7 +42,7 @@
     <button id="show-form">Add Report</button>
   </div>
   
-    <div id="legend">
+  <div id="legend">
     <h4>Accident Types</h4>
     <div class="legend-item"><span class="legend-color" style="background:#E74C3C"></span> Collision</div>
     <div class="legend-item"><span class="legend-color" style="background:#E67E22"></span> Overturn</div>
@@ -56,14 +56,9 @@
     <div class="legend-item"><span class="legend-color" style="background:#000; width:14px; height:14px;"></span> Severe</div>
   </div>
   
-    <div id="form-panel">
+  <div id="form-panel">
     <h4>New Accident Report</h4>
     <form id="accident-form">
-      <input type="hidden" id="report_id" name="report_id">
-      
-      <input type="hidden" id="longitude" name="longitude">
-      <input type="hidden" id="latitude" name="latitude">
-
       <label>Accident Type</label>
       <select name="accident_type" required>
         <option value="">Select Type</option>
@@ -101,6 +96,7 @@
     </form>
   </div>
   
+  <!-- Load OpenLayers BEFORE your script -->
   <script src="https://cdn.jsdelivr.net/npm/ol@v9.0.0/dist/ol.js"></script>
   <script src="main.js"></script>
 </body>
