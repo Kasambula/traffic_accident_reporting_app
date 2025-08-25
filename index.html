@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KAMPALA TRAFFIC ACCIDENT PORTAL</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>KAMPALA TRAFFIC ACCIDENT PORTAL</h1>
+
+  <div id="map"></div>
+
+  <!-- Layer Switcher -->
+  <div id="layer-switcher">
+    <h4>Basemaps</h4>
+    <input type="radio" name="basemap" id="osm" checked> <label for="osm">OSM Standard</label><br>
+    <input type="radio" name="basemap" id="google-sat"> <label for="google-sat">Google Satellite</label>
+
+    <h4>Overlays</h4>
+    <input type="checkbox" id="boundary" checked> <label for="boundary">Boundaries</label><br>
+    <input type="checkbox" id="accidents" checked> <label for="accidents">Accidents</label>
+
+    <h4>Filters</h4>
+    <label for="filter-type">Accident Type:</label>
+    <select id="filter-type">
+        <option value="All">All Types</option>
+        <option value="Collision">Collision</option>
+        <option value="Overturn">Overturn</option>
+        <option value="Pedestrian Hit">Pedestrian Hit</option>
+        <option value="Animal Hit">Animal Hit</option>
+        <option value="Others">Others</option>
+    </select>
+
+    <label for="filter-severity">Severity:</label>
+    <select id="filter-severity">
+        <option value="All">All Severities</option>
+        <option value="Minor">Minor</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Severe">Severe</option>
+    </select>
+
+    <button id="show-form">Add Report</button>
+  </div>
+
+  <!-- Legend -->
+  <div id="legend">
+    <h4>Accident Types</h4>
+    <div class="legend-item"><span class="legend-color" style="background:#E74C3C"></span> Collision</div>
+    <div class="legend-item"><span class="legend-color" style="background:#E67E22"></span> Overturn</div>
+    <div class="legend-item"><span class="legend-color" style="background:#F1C40F"></span> Pedestrian Hit</div>
+    <div class="legend-item"><span class="legend-color" style="background:#27AE60"></span> Animal Hit</div>
+    <div class="legend-item"><span class="legend-color" style="background:#2980B9"></span> Others</div>
+
+    <h4>Severity (Circle Size)</h4>
+    <div class="legend-item"><span class="legend-color" style="background:#000; width:6px; height:6px;"></span> Minor</div>
+    <div class="legend-item"><span class="legend-color" style="background:#000; width:10px; height:10px;"></span> Moderate</div>
+    <div class="legend-item"><span class="legend-color" style="background:#000; width:14px; height:14px;"></span> Severe</div>
+  </div>
+
+  <!-- Form -->
+  <div id="form-panel">
+    <h4>New Accident Report</h4>
+    <form id="accident-form">
+      <input type="hidden" id="report_id" name="report_id">
+      <input type="hidden" id="longitude" name="longitude">
+      <input type="hidden" id="latitude" name="latitude">
+
+      <label>Accident Type</label>
+      <select name="accident_type" required>
+        <option value="">Select Type</option>
+        <option value="Collision">Collision</option>
+        <option value="Overturn">Overturn</option>
+        <option value="Pedestrian Hit">Pedestrian Hit</option>
+        <option value="Animal Hit">Animal Hit</option>
+        <option value="Others">Others</option>
+      </select>
+
+      <label>Severity</label>
+      <select name="severity" required>
+        <option value="">Select Severity</option>
+        <option value="Minor">Minor</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Severe">Severe</option>
+      </select>
+
+      <label>Number of Vehicles</label>
+      <input type="number" name="num_vehicles" min="1" max="10" required>
+
+      <label>Number of Casualties</label>
+      <input type="number" name="num_casualties" min="0" max="50" required>
+
+      <label>Timestamp</label>
+      <input type="datetime-local" name="timestamp" required>
+
+      <label>Photo Evidence</label>
+      <input type="file" name="photo_evidence" accept="image/*">
+
+      <label>Description</label>
+      <textarea name="description" rows="3"></textarea>
+
+      <button type="submit">Submit Report</button>
+    </form>
+  </div>
+
+  <!-- Load OpenLayers (non-modular build) -->
+  <script src="https://cdn.jsdelivr.net/npm/ol/ol.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
