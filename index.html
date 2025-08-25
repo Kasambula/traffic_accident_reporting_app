@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>KAMPALA TRAFFIC ACCIDENT PORTAL</title>
-  <!-- OpenLayers CSS via CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -100,10 +98,8 @@
       <button type="submit">Submit Report</button>
     </form>
   </div>
-
-  <!-- OpenLayers JS via CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/ol/dist/ol.js"></script>
-  <!-- Your JS file -->
-  <script src="main.js"></script>
+  
+  <!-- FIXED relative path -->
+  <script type="module" src="./main.js"></script>
 </body>
 </html>
