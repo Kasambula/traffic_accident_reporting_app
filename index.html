@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>KAMPALA TRAFFIC ACCIDENT PORTAL</title>
+
+  <!-- OpenLayers CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
+
+  <!-- Your custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -103,8 +107,10 @@
     </form>
   </div>
 
-  <!-- Load OpenLayers (non-modular build) -->
+  <!-- ✅ Load OpenLayers FIRST -->
   <script src="https://cdn.jsdelivr.net/npm/ol/ol.js"></script>
+
+  <!-- ✅ Then load your app code -->
   <script src="main.js"></script>
 </body>
 </html>
